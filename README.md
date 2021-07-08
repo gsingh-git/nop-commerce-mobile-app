@@ -8,7 +8,7 @@ This project is based on nopcommerce. It will fetch data using [Nopcommerce API 
 
 ## Screenshot
 
-![](screens/home-1.png)
-![](screens/home-2.png)
-![](screens/home-3.png)
-![](screens/drawer.png)
+![](nopapp/screens/home-1.png)
+![](nopapp/screens/home-2.png)
+![](nopapp/screens/home-3.png)
+![](nopapp/screens/drawer.png)
