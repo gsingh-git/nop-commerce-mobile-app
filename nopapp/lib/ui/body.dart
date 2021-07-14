@@ -1,13 +1,20 @@
-import 'package:nopapp/src/ui/widgets/FeaturedBrand.dart';
-import 'package:nopapp/src/ui/widgets/Category.dart';
-import 'package:nopapp/src/ui/widgets/DealsOfTheDay.dart';
-import 'package:nopapp/src/ui/widgets/OffersInList.dart';
-import 'package:nopapp/src/ui/widgets/DualCameraPhones.dart';
-import 'package:nopapp/src/ui/widgets/Deals.dart';
-import 'package:nopapp/src/ui/widgets/Offers.dart';
+import 'package:nopapp/ui/widgets/FeaturedBrand.dart';
+import 'package:nopapp/ui/widgets/Category.dart';
+import 'package:nopapp/ui/widgets/DealsOfTheDay.dart';
+import 'package:nopapp/ui/widgets/OffersInList.dart';
+import 'package:nopapp/ui/widgets/DualCameraPhones.dart';
+import 'package:nopapp/ui/widgets/Deals.dart';
+import 'package:nopapp/ui/widgets/Offers.dart';
 import 'package:flutter/material.dart';
+import 'package:nopapp/models/banner_images.dart';
 
 class Body extends StatefulWidget {
+  BannerImages _images;
+
+  Body(BannerImages images) {
+    this._images = images;
+  }
+
   @override
   _BodyState createState() => _BodyState();
 }
@@ -49,7 +56,7 @@ class _BodyState extends State<Body> {
             ),
           ),
           Firstlist(),
-          Secondlist(),
+          Secondlist(widget._images),
           Thirdlist(),
           Fourthlist(),
           SizedBox(

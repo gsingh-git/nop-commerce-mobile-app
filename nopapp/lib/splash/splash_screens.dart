@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:nopapp/src/Constant/Constant.dart';
+import 'package:nopapp/Constant/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

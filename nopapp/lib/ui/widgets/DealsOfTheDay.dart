@@ -1,4 +1,4 @@
-import 'package:nopapp/src/Models/deals.dart';
+import 'package:nopapp/models/deals.dart';
 import 'package:flutter/material.dart';
 
 class Fourthlist extends StatefulWidget {
@@ -16,7 +16,7 @@ class _FourthlistState extends State<Fourthlist> {
   }
 
   addDealItem() {
-    deal = List<deals>();
+    deal = <deals>[];
     deal.add(deals("assets/female.png", 'Dresses & Tops', 'From 99'));
     deal.add(deals("assets/watch.png", 'Watches', 'Upto 70% Off'));
     deal.add(deals("assets/male_modle.png", 'T Shirts', 'Starting @99'));

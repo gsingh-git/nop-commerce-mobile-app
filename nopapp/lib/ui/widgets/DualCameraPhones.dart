@@ -1,4 +1,4 @@
-import 'package:nopapp/src/Models/deals.dart';
+import 'package:nopapp/models/deals.dart';
 import 'package:flutter/material.dart';
 
 class Seventhlist extends StatefulWidget {
@@ -16,7 +16,7 @@ class _SeventhlistState extends State<Seventhlist> {
   }
 
   addDealItem() {
-    deal = List<deals>();
+    deal = <deals>[];
     deal.add(deals("assets/phone.png", 'Redmi Note 7 Pro', 'From @44,900'));
     deal.add(deals("assets/phone_two.png", 'Redmi Note 7s', 'Trending Range'));
     deal.add(deals("assets/phone_three.png", 'Realme 3', '1TB HDD'));
