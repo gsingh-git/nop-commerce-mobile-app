@@ -1,7 +1,7 @@
 import 'package:nopapp/ui/widgets/FeaturedBrand.dart';
 import 'package:nopapp/ui/widgets/Category.dart';
 import 'package:nopapp/ui/widgets/DealsOfTheDay.dart';
-import 'package:nopapp/ui/widgets/OffersInList.dart';
+import 'package:nopapp/ui/widgets/home_slider.dart';
 import 'package:nopapp/ui/widgets/DualCameraPhones.dart';
 import 'package:nopapp/ui/widgets/Deals.dart';
 import 'package:nopapp/ui/widgets/Offers.dart';
@@ -56,7 +56,7 @@ class _BodyState extends State<Body> {
             ),
           ),
           Firstlist(),
-          Secondlist(widget._images),
+          HomeSlider(widget._images),
           Thirdlist(),
           Fourthlist(),
           SizedBox(

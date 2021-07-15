@@ -1,18 +1,19 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:nopapp/models/banner_images.dart' as banner;
 
-class Secondlist extends StatefulWidget {
+class HomeSlider extends StatefulWidget {
   banner.BannerImages _images;
 
-  Secondlist(banner.BannerImages images) {
+  HomeSlider(banner.BannerImages images) {
     this._images = images;
   }
 
   @override
-  _SecondlistState createState() => _SecondlistState();
+  _HomeSliderState createState() => _HomeSliderState();
 }
 
-class _SecondlistState extends State<Secondlist> {
+class _HomeSliderState extends State<HomeSlider> {
   buildItem(banner.Slider slider, BuildContext context, int index) {
     return Container(
       height: MediaQuery.of(context).size.height / 4,
@@ -20,9 +21,10 @@ class _SecondlistState extends State<Secondlist> {
         padding: const EdgeInsets.only(left: 2, right: 2),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(6),
-          child: Image.network(
-            slider.pictureUrl,
+          child: CachedNetworkImage(
+            imageUrl: slider.pictureUrl,
             height: MediaQuery.of(context).size.height / 4,
+            errorWidget: (context, url, error) => Icon(Icons.error),
           ),
         ),
       ),
