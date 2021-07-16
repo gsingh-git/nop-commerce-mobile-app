@@ -4,13 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:nopapp/helper/colors.dart';
 
 class AppBtn extends StatelessWidget {
-  final String title;
+  final String? title;
   final AnimationController btnCntrl;
-  final Animation btnAnim;
-  final VoidCallback onBtnSelected;
+  final Animation? btnAnim;
+  final VoidCallback? onBtnSelected;
 
   const AppBtn(
-      {Key key, this.title, this.btnCntrl, this.btnAnim, this.onBtnSelected})
+      {required Key key,
+      this.title,
+      required this.btnCntrl,
+      this.btnAnim,
+      this.onBtnSelected})
       : super(key: key);
 
   @override
@@ -21,10 +25,10 @@ class AppBtn extends StatelessWidget {
     );
   }
 
-  Widget _buildBtnAnimation(BuildContext context, Widget child) {
+  Widget _buildBtnAnimation(BuildContext context, Widget? child) {
     return CupertinoButton(
       child: Container(
-        width: btnAnim.value,
+        width: btnAnim!.value,
         height: 45,
         margin: EdgeInsetsDirectional.only(top: 25),
         alignment: FractionalOffset.center,
@@ -36,17 +40,17 @@ class AppBtn extends StatelessWidget {
               stops: [0, 1]),
           borderRadius: new BorderRadius.all(const Radius.circular(10.0)),
         ),
-        child: btnAnim.value > 75.0
-            ? Text(title,
+        child: btnAnim!.value > 75.0
+            ? Text(title!,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.headline6.copyWith(
+                style: Theme.of(context).textTheme.headline6!.copyWith(
                     color: colors.white, fontWeight: FontWeight.normal))
             : new CircularProgressIndicator(
                 valueColor: new AlwaysStoppedAnimation<Color>(colors.white),
               ),
       ),
       onPressed: () {
-        onBtnSelected();
+        onBtnSelected!();
       },
     );
   }

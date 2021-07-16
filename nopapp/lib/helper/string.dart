@@ -1,5 +1,5 @@
-double deviceHeight;
-double deviceWidth;
+double? deviceHeight;
+double? deviceWidth;
 
 String ISDARK = "";
 final String NO_INTERNET_CONNECTION =

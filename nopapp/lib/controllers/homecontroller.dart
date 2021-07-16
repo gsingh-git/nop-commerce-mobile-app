@@ -1,6 +1,8 @@
 import 'package:get/state_manager.dart';
 import 'package:nopapp/models/banner_images.dart';
 import 'package:get/get.dart';
+import 'package:nopapp/models/category_model.dart';
+import 'package:nopapp/models/homepage_model.dart';
 import 'package:nopapp/services/remote_service.dart';
 import 'base_controller.dart';
 import 'package:nopapp/services/home_service.dart';
@@ -10,7 +12,7 @@ class HomeController extends GetxController {
   //final HomeServices _homeServices = Get.put(HomeServices());
 
   var isLoading = true.obs;
-  var bannerImage = BannerImages().obs;
+  var homePageModel = HomePageModel().obs;
   @override
   void onInit() {
     fetchBannerImages();
@@ -35,7 +37,7 @@ class HomeController extends GetxController {
       // RemoteServices.fetchProducts();
       var products = await HomeServices.fetchBannerImages();
       if (products != null) {
-        bannerImage.value = products;
+        homePageModel.value = HomePageModel(bannerImages: products);
       }
     } finally {
       isLoading(false);

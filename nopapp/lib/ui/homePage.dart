@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   final HomeController homeController = Get.put(HomeController());
   bool isOffline = true;
   final Connectivity _connectivity = Connectivity();
-  StreamSubscription<ConnectivityResult> _connectivitySubscription;
+  late StreamSubscription<ConnectivityResult> _connectivitySubscription;
 
   @override
   initState() {
@@ -92,7 +92,8 @@ class _HomePageState extends State<HomePage> {
                   if (homeController.isLoading.value)
                     return homeShimmer();
                   else
-                    return Body(homeController.bannerImage.value);
+                    return Body(
+                        homeController.homePageModel.value.bannerImages!);
                 }),
               )
             : noInternet(context));
@@ -122,13 +123,13 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget homeShimmer() {
-    double width = deviceWidth;
+    double width = deviceWidth!;
     double height = width / 2;
     return Container(
       width: double.infinity,
       child: Shimmer.fromColors(
-        baseColor: Colors.grey[300],
-        highlightColor: Colors.grey[100],
+        baseColor: Colors.grey[300]!,
+        highlightColor: Colors.grey[100]!,
         child: SingleChildScrollView(
             child: Column(
           children: [

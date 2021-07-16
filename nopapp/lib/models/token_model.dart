@@ -11,9 +11,9 @@ String tokenModelToJson(TokenModel data) => json.encode(data.toJson());
 
 class TokenModel {
   TokenModel({
-    this.accessToken,
-    this.tokenType,
-    this.expiresIn,
+    required this.accessToken,
+    required this.tokenType,
+    required this.expiresIn,
     this.errorDescription,
   });
 

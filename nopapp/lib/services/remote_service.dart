@@ -8,7 +8,7 @@ import 'package:nopapp/models/token_model.dart';
 class RemoteServices {
   static var client = http.Client();
 
-  static Future<TokenModel> getTokenFromAPI() async {
+  static Future<TokenModel?> getTokenFromAPI() async {
     try {
       var uri = Uri.parse(
           baseAddress + 'token?Username=admin@yourstore.com&Password=admin');

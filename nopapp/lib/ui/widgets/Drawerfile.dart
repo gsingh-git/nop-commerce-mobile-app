@@ -8,7 +8,7 @@ class Drawerfile extends StatefulWidget {
 }
 
 class _DrawerfileState extends State<Drawerfile> {
-  List<DrawerItemModel> drawerItemModel;
+  late List<DrawerItemModel> drawerItemModel;
 
   @override
   void initState() {
@@ -17,7 +17,7 @@ class _DrawerfileState extends State<Drawerfile> {
   }
 
   addDrawerItem() {
-    drawerItemModel = List<DrawerItemModel>();
+    drawerItemModel = <DrawerItemModel>[];
     drawerItemModel.add(DrawerItemModel("Gagandeep Nop App",
         "https://rukminim1.flixcart.com/www/50/50/promos/11/07/2018/70e5346e-fce4-4718-8e56-27be8492faa5.png?q=80"));
     drawerItemModel.add(DrawerItemModel("Electronics",
@@ -68,7 +68,7 @@ class _DrawerfileState extends State<Drawerfile> {
                 Expanded(
                   flex: 2,
                   child: Image.network(
-                    drawerItemModel[index].imageRes,
+                    drawerItemModel[index].imageRes!,
                     height: 15,
                     width: 15,
                   ),
@@ -144,11 +144,11 @@ class _DrawerfileState extends State<Drawerfile> {
 
 class DrawerItemModel {
   String _name;
-  String _imageRes;
+  String? _imageRes;
 
   DrawerItemModel(this._name, this._imageRes);
 
-  String get imageRes => _imageRes;
+  String? get imageRes => _imageRes;
 
   String get name => _name;
 }

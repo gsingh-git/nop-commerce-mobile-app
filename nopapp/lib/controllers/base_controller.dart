@@ -11,10 +11,10 @@ class BaseController {
     debugPrint('handling error: $getdata1');
     if (error is BadRequestException) {
       var message = error.message;
-      DialogHelper.showErroDialog(description: message);
+      DialogHelper.showErroDialog(description: message!);
     } else if (error is FetchDataException) {
       var message = error.message;
-      DialogHelper.showErroDialog(description: message);
+      DialogHelper.showErroDialog(description: message!);
     } else if (error is ApiNotRespondingException) {
       DialogHelper.showErroDialog(
           description: 'Oops! It took longer to respond.');
@@ -23,8 +23,8 @@ class BaseController {
     }
   }
 
-  showLoading([String message]) {
-    DialogHelper.showLoading(message);
+  showLoading([String? message]) {
+    DialogHelper.showLoading(message!);
   }
 
   hideLoading() {

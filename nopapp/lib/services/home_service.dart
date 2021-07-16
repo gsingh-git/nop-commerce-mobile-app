@@ -3,7 +3,7 @@ import 'base_client.dart';
 import 'package:nopapp/Constant/url_string.dart';
 
 class HomeServices extends BaseClient {
-  static Future<BannerImages> fetchBannerImages() async {
+  static Future<BannerImages?> fetchBannerImages() async {
     var response = await BaseClient().get(getSliderApi);
 
     if (response.statusCode == 200) {

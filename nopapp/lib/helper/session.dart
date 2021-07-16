@@ -19,7 +19,7 @@ String getToken_bak() {
 
 Future<String> getToken() async {
   var assestoken = '';
-  final TokenModel model = await RemoteServices.getTokenFromAPI();
+  final TokenModel? model = await RemoteServices.getTokenFromAPI();
 
   if (model != null && model.accessToken != null) {
     assestoken = model.accessToken.toString();
@@ -55,7 +55,7 @@ noIntText(BuildContext context) {
       child: Text(NO_INTERNET,
           style: Theme.of(context)
               .textTheme
-              .headline5
+              .headline5!
               .copyWith(color: colors.primary, fontWeight: FontWeight.normal)));
 }
 
@@ -64,7 +64,7 @@ noIntDec(BuildContext context) {
     padding: EdgeInsetsDirectional.only(top: 30.0, start: 30.0, end: 30.0),
     child: Text(NO_INTERNET_CONNECTION,
         textAlign: TextAlign.center,
-        style: Theme.of(context).textTheme.headline6.copyWith(
+        style: Theme.of(context).textTheme.headline6!.copyWith(
               color: colors.lightBlack2,
               fontWeight: FontWeight.normal,
             )),

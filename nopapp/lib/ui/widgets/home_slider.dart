@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:nopapp/models/banner_images.dart' as banner;
 
 class HomeSlider extends StatefulWidget {
-  banner.BannerImages _images;
+  banner.BannerImages? _images;
 
   HomeSlider(banner.BannerImages images) {
     this._images = images;
@@ -22,7 +22,7 @@ class _HomeSliderState extends State<HomeSlider> {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(6),
           child: CachedNetworkImage(
-            imageUrl: slider.pictureUrl,
+            imageUrl: slider.pictureUrl!,
             height: MediaQuery.of(context).size.height / 4,
             errorWidget: (context, url, error) => Icon(Icons.error),
           ),
@@ -38,10 +38,10 @@ class _HomeSliderState extends State<HomeSlider> {
       child: Container(
         height: MediaQuery.of(context).size.height / 4,
         child: ListView.builder(
-          itemCount: widget._images.sliders.length,
+          itemCount: widget._images!.sliders!.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return buildItem(widget._images.sliders[index], context, index);
+            return buildItem(widget._images!.sliders![index], context, index);
           },
         ),
       ),

@@ -7,7 +7,7 @@ class Fourthlist extends StatefulWidget {
 }
 
 class _FourthlistState extends State<Fourthlist> {
-  List<deals> deal;
+  late List<deals> deal;
 
   @override
   void initState() {

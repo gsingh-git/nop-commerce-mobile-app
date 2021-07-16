@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:nopapp/models/banner_images.dart';
 
 class Body extends StatefulWidget {
-  BannerImages _images;
+  BannerImages? _images;
 
   Body(BannerImages images) {
     this._images = images;
@@ -56,7 +56,7 @@ class _BodyState extends State<Body> {
             ),
           ),
           Firstlist(),
-          HomeSlider(widget._images),
+          HomeSlider(widget._images!),
           Thirdlist(),
           Fourthlist(),
           SizedBox(

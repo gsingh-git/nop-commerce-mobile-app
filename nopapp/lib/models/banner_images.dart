@@ -14,7 +14,7 @@ class BannerImages {
     this.sliders,
   });
 
-  List<Slider> sliders;
+  List<Slider>? sliders;
 
   factory BannerImages.fromJson(Map<String, dynamic> json) => BannerImages(
         sliders:
@@ -22,7 +22,7 @@ class BannerImages {
       );
 
   Map<String, dynamic> toJson() => {
-        "sliders": List<dynamic>.from(sliders.map((x) => x.toJson())),
+        "sliders": List<dynamic>.from(sliders!.map((x) => x.toJson())),
       };
 }
 
@@ -33,9 +33,9 @@ class Slider {
     this.link,
   });
 
-  String pictureUrl;
-  String text;
-  String link;
+  String? pictureUrl;
+  String? text;
+  String? link;
 
   factory Slider.fromJson(Map<String, dynamic> json) => Slider(
         pictureUrl: json["picture_url"],
