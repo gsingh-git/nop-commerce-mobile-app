@@ -1,18 +1,18 @@
 import 'package:nopapp/ui/widgets/FeaturedBrand.dart';
-import 'package:nopapp/ui/widgets/Category.dart';
+import 'package:nopapp/ui/widgets/category_list.dart';
 import 'package:nopapp/ui/widgets/DealsOfTheDay.dart';
 import 'package:nopapp/ui/widgets/home_slider.dart';
 import 'package:nopapp/ui/widgets/DualCameraPhones.dart';
 import 'package:nopapp/ui/widgets/Deals.dart';
 import 'package:nopapp/ui/widgets/Offers.dart';
 import 'package:flutter/material.dart';
-import 'package:nopapp/models/banner_images.dart';
+import 'package:nopapp/models/homepage_model.dart';
 
 class Body extends StatefulWidget {
-  BannerImages? _images;
+  HomePageModel? _homePageModel;
 
-  Body(BannerImages images) {
-    this._images = images;
+  Body(HomePageModel homeModel) {
+    this._homePageModel = homeModel;
   }
 
   @override
@@ -55,8 +55,8 @@ class _BodyState extends State<Body> {
               ),
             ),
           ),
-          Firstlist(),
-          HomeSlider(widget._images!),
+          CategoryList(widget._homePageModel!.categoryModel!),
+          HomeSlider(widget._homePageModel!.bannerImages!),
           Thirdlist(),
           Fourthlist(),
           SizedBox(

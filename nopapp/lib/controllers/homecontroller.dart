@@ -7,6 +7,7 @@ import 'package:nopapp/services/remote_service.dart';
 import 'base_controller.dart';
 import 'package:nopapp/services/home_service.dart';
 import 'package:nopapp/Constant/constant.dart';
+import 'package:nopapp/services/category_service.dart';
 
 class HomeController extends GetxController {
   //final HomeServices _homeServices = Get.put(HomeServices());
@@ -35,10 +36,11 @@ class HomeController extends GetxController {
     try {
       isLoading(true);
       // RemoteServices.fetchProducts();
-      var products = await HomeServices.fetchBannerImages();
-      if (products != null) {
-        homePageModel.value = HomePageModel(bannerImages: products);
-      }
+      var sliders = await HomeServices.fetchBannerImages();
+      var categories = await CategoryServices.fetchHomeCategories();
+
+      homePageModel.value =
+          HomePageModel(bannerImages: sliders, categoryModel: categories);
     } finally {
       isLoading(false);
     }

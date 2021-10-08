@@ -4,7 +4,7 @@ String SPLASH_SCREEN = '/AnimatedSplashScreen', HOME_SCREEN = '/HomePage';
 final String fetchingData = 'Fetching data';
 
 //nop commerce api link
-final String baseAddress = 'http://192.168.0.106:5300/';
+final String baseAddress = 'http://192.168.0.107:5300/';
 final String baseUrl = baseAddress + 'api/';
 
 final int TIME_OUT_DURATION = 360;

@@ -92,8 +92,7 @@ class _HomePageState extends State<HomePage> {
                   if (homeController.isLoading.value)
                     return homeShimmer();
                   else
-                    return Body(
-                        homeController.homePageModel.value.bannerImages!);
+                    return Body(homeController.homePageModel.value);
                 }),
               )
             : noInternet(context));
